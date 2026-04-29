@@ -30,7 +30,7 @@ async def cmd_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def cmd_task(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     if user.id not in ADMIN_IDS:
-        await update.message.reply_text("⛔ Нет прав.")
+        await update.message.reply_text("⛔️ Нет прав.")
         return
     text = " ".join(context.args).strip()
     if not text:
@@ -63,5 +63,5 @@ def main():
     app.add_handler(CallbackQueryHandler(callback_take, pattern="^take$"))
     app.run_polling(drop_pending_updates=True)
 
-if __name__ == "__main__":
+if name == "__main__":
     main()
